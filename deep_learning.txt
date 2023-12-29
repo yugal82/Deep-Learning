@@ -1,0 +1,64 @@
+Q) What is Deep Learning?
+Deep learning is a subfield of machine learning and artificial intelligence that focuses on using neural networks with many layers (deep architectures) to model and solve complex tasks. It is inspired by the structure and function of the human brain's neural networks and has led to significant advancements in various domains, including computer vision, natural language processing, speech recognition, and more.
+
+The defining characteristic of deep learning is the presence of multiple layers (hence "deep") in the neural network architecture. Each layer consists of interconnected nodes (neurons) that process and transform the input data. The layers are typically organized into an input layer, one or more hidden layers, and an output layer. The architecture and number of layers can vary greatly based on the problem being solved and the complexity of the data.
+
+Deep learning has become highly successful due to its ability to automatically learn hierarchical representations of data directly from raw input. This contrasts with traditional machine learning techniques, where engineers need to design and engineer feature representations manually.
+
+Key concepts and techniques in deep learning include:
+
+-Neural Networks: 
+    Neural networks are the foundation of deep learning. They consist of interconnected nodes (neurons) that process and transform data. The connections between nodes have associated weights that are learned during training.
+-Deep Architectures: 
+    Deep learning models have many hidden layers, which allow them to learn increasingly complex and abstract features as data flows through the network.
+-Activation Functions: 
+    Activation functions introduce nonlinearity into the neural network, enabling it to capture nonlinear relationships in the data.
+-Backpropagation: 
+    This is the process of adjusting the weights of the neural network based on the error between predicted and actual outcomes. It involves propagating the error backwards through the network to update the weights.
+-Gradient Descent: 
+    Gradient descent is an optimization algorithm used to find the optimal weights that minimize the prediction error. Variants like stochastic gradient descent (SGD) are commonly used in training deep learning models.
+-Convolutional Neural Networks (CNNs): 
+    CNNs are specialized neural network architectures designed for computer vision tasks. They use convolutional layers to automatically learn spatial hierarchies of features from images.
+-Recurrent Neural Networks (RNNs): 
+    RNNs are designed to handle sequential data like time series or natural language. They have feedback connections that allow information to flow from one step to the next.
+-Long Short-Term Memory (LSTM): 
+    LSTMs are a type of RNN designed to capture long-range dependencies and avoid the vanishing gradient problem in deep networks.
+-Generative Adversarial Networks (GANs): 
+    GANs consist of two neural networks—a generator and a discriminator—trained in opposition. They are used to generate realistic data, such as images or text.
+-Transfer Learning: 
+    Transfer learning involves using pre-trained models on large datasets to extract features or fine-tune them for new, smaller datasets. This has led to significant improvements in various applications.
+
+
+Q) What is activation function?
+An activation function is a key component of a neural network in deep learning. It introduces nonlinearity to the model by determining the output of a neuron (node) based on the weighted sum of its inputs. Activation functions play a crucial role in allowing neural networks to learn and represent complex relationships in data, which would be challenging with only linear transformations.
+
+In a neural network, each neuron receives input from the previous layer or directly from the input data. The inputs are multiplied by weights and summed up, resulting in a linear combination. The activation function then transforms this linear combination into the neuron's output.
+
+Commonly used activation functions in deep learning include:
+
+Sigmoid Activation (Logistic):
+    Formula: f(x) = 1 / (1 + exp(-x))
+    Output range: (0, 1)
+    Features: Sigmoid outputs are in the range of 0 to 1, which makes them useful for binary classification problems and probabilistic interpretations. However, they can suffer from vanishing gradients for very large or small inputs, leading to slow learning.
+
+Hyperbolic Tangent Activation (tanh):
+    Formula: f(x) = (exp(x) - exp(-x)) / (exp(x) + exp(-x))
+    Output range: (-1, 1)
+    Features: Similar to the sigmoid function but outputs are centered around 0, which can help with faster convergence in some cases.
+
+Rectified Linear Unit (ReLU):
+    Formula: f(x) = max(0, x)
+    Output range: [0, ∞)
+    Features: ReLU is computationally efficient and addresses the vanishing gradient problem. It introduces sparsity by setting negative values to zero, which can help networks learn important features. However, ReLU neurons can "die" during training if they consistently output zero.
+
+Leaky ReLU:
+    Formula: f(x) = x if x > 0, else a*x where a is a small positive constant (typically a fraction like 0.01)
+    Output range: (-∞, ∞)
+    Features: Leaky ReLU addresses the "dying ReLU" problem by allowing small negative values to pass through, preventing complete inactivation.
+
+Parametric ReLU (PReLU):
+    Formula: f(x) = x if x > 0, else a*x where 'a' is a learnable parameter
+    Output range: (-∞, ∞)
+    Features: Similar to Leaky ReLU but 'a' is a learned parameter instead of a fixed constant.
+
+NOTE- exp(-x) means e raised to -x, where e = 2.7182
