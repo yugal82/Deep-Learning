@@ -137,3 +137,36 @@ plt.plot(range(EPOCHS), loss, label="Training Loss")
 plt.plot(range(EPOCHS), val_loss, label="Validation Loss")
 plt.legend(loc="upper right")
 plt.title("Training and Validation Loss")
+
+for images_batch, labels_batch in testing_data.take(1):
+    first_img = images_batch[0].numpy().astype("uint8")
+    first_label = labels_batch[0]
+
+    print("First image to predict")
+    plt.imshow(first_img)
+    print("First image actual label is: ", class_name[first_label])
+
+    batch_prediction = model.predict(images_batch)
+    print("Predicted label: ", class_name[np.argmax(batch_prediction[0])])
+
+def predict(model, img):
+    img_arr = tf.keras.preprocessing.image.img_to_array(images[i].numpy())
+    img_arr = tf.expand_dims(img_arr, 0)
+
+    predictions = model.predict(img_arr)
+    predicted_class = class_name[np.argmax(predictions[0])]
+
+    confidence = round(100* (np.max(predictions[0])), 2)
+    return predicted_class, confidence
+
+plt.figure(figsize=(15,15))
+for images, labels in testing_data.take(1):
+    for i in range(9):
+        ax = plt.subplot(3,3,i+1)
+        plt.imshow(images[i].numpy().astype("uint8"))
+
+        predicted_class, confidence = predict(model, images[i].numpy())
+        actual_class = class_name[labels[i]]
+
+        plt.title(f"Actual: {actual_class}, \n Predicted: {predicted_class}. \n Confidence: {confidence}%")        
+        plt.axis("off")
