@@ -1,0 +1,9 @@
+Before building any deep learning model, we first need to know what type of data or in what format that the model expects as input.
+If we don't know what is the expected type of data (such as 2d array, 3d array, etc.), then it would be impossible to train the model.
+
+Sequential Model:
+    model = keras.Sequential()
+
+To train the sequential model, we use the fit() method. And the fit() method requires the following parameters:
+    fit(X, y)
+This model expects the format of the data (x and y) to be a numpy array (or tensorflow tensor, dict mapping, tf.data dataset)
