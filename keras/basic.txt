@@ -7,3 +7,8 @@ Sequential Model:
 To train the sequential model, we use the fit() method. And the fit() method requires the following parameters:
     fit(X, y)
 This model expects the format of the data (x and y) to be a numpy array (or tensorflow tensor, dict mapping, tf.data dataset)
+
+Validation Set:
+-> Whenever we train a model, we want the model to be trained well and perform well, i.e we want the loss to be as low as psbl and accuracy to be as high as psbl. However, we just dont want to train the model, we also want our model to run well on data that the model has never seen before. The model should be able to generalize on the unexposed dataset and give accurate prediction. This can be done via introducing a validation set in the training process.
+
+Validation dataset is taken from the training dataset. The model will only train on training data and validate on the validation data.
